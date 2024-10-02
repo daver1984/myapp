@@ -1,9 +1,9 @@
 services:
-  app:
-    image: myapp
-    container_name: myapp_web
+  web:
+    image: httpd:alpine
+    container_name: myapp
     ports:
       - "8080:80"
     volumes:
-      - ./app:/app
+      - ./index.html:/usr/local/apache2/htdocs/index.html
     restart: always
